@@ -69,9 +69,7 @@ with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
             except Exception as e:
             
                 print(f"❌ Error processing {filename}: {e}")
-                
-
-print("\n All CSVs have been combined into one Excel file!")
+                print("\n All CSVs have been combined into one Excel file!")
 
 
 [ # - that line are comment(will not run) means this is only for understanding not for the code] 
