@@ -56,8 +56,7 @@ with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
         if filename.lower().endswith(".csv"):
             file_path = os.path.join(input_folder, filename)
             sheet_name = os.path.splitext(filename)[0][:31]  # Excel sheet names max 31 chars
-
-            try:
+         try:
                 df = pd.read_csv(file_path)
                 df.to_excel(writer, sheet_name=sheet_name, index=False)
                 print(f"✅ Added sheet: {sheet_name}")
@@ -65,6 +64,9 @@ with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
                 print(f"❌ Error processing {filename}: {e}")
 
 print("\n All CSVs have been combined into one Excel file!")
+
+
+[ # - that line are comment(will not run) means this is only for understanding not for the code] 
 
 > 💡 Don’t know Python? No problem — use ChatGPT to generate the script, paste it into VS Code, and run it!
 
