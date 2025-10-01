@@ -44,10 +44,7 @@ This automation:
 import os
 import pandas as pd
 
-# 📂 Folder containing your CSV files
 input_folder = r"D:\SQL\Project\CSV_Files"  # 🖊️ Change to your folder path
-
-# 📁 Output Excel workbook file
 output_file = r"D:\SQL\Project\Excel_Workbook\AllCSVs_In_One_Workbook.xlsx"  # 🖊️ Change path and filename
 
 # 🧾 Create Excel writer
