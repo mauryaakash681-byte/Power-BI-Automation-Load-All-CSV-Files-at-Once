@@ -49,15 +49,23 @@ output_file = r"D:\SQL\Project\Excel_Workbook\AllCSVs_In_One_Workbook.xlsx"  # �
 
 # 🧾 Create Excel writer
 with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
+
     for filename in os.listdir(input_folder):
+    
         if filename.lower().endswith(".csv"):
+        
             file_path = os.path.join(input_folder, filename)
+            
             sheet_name = os.path.splitext(filename)[0][:31]  
    try:
                 df = pd.read_csv(file_path)
+                
                 df.to_excel(writer, sheet_name=sheet_name, index=False)
+                
                 print(f"✅ Added sheet: {sheet_name}")
+                
             except Exception as e:
+            
                 print(f"❌ Error processing {filename}: {e}")
 
 print("\n All CSVs have been combined into one Excel file!")
