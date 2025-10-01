@@ -41,15 +41,15 @@ This automation:
 
 ## 📄 Python Script Summary
 
-import os
+    import os
 
-import pandas as pd
+    import pandas as pd
 
-input_folder = r"D:\SQL\Project\CSV_Files"  # 🖊️ Change to your folder path
+    input_folder = r"D:\SQL\Project\CSV_Files"  # 🖊️ Change to your folder path
 
-output_file = r"D:\SQL\Project\Excel_Workbook\AllCSVs_In_One_Workbook.xlsx"  # 🖊️ Change path and filename
+    output_file = r"D:\SQL\Project\Excel_Workbook\AllCSVs_In_One_Workbook.xlsx"  # 🖊️ Change path and filename
 
-with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
+    with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
 
     for filename in os.listdir(input_folder):
     
@@ -58,9 +58,9 @@ with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
             file_path = os.path.join(input_folder, filename)
             
             sheet_name = os.path.splitext(filename)[0][:31]  
-   try:
+    try:
    
-                df = pd.read_csv(file_path)
+              df = pd.read_csv(file_path)
                 
                 df.to_excel(writer, sheet_name=sheet_name, index=False)
                 
