@@ -42,12 +42,15 @@ This automation:
 ## 📄 Python Script Summary
 
 import os
+
 import pandas as pd
 
 input_folder = r"D:\SQL\Project\CSV_Files"  # 🖊️ Change to your folder path
+
 output_file = r"D:\SQL\Project\Excel_Workbook\AllCSVs_In_One_Workbook.xlsx"  # 🖊️ Change path and filename
 
 # 🧾 Create Excel writer
+
 with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
 
     for filename in os.listdir(input_folder):
