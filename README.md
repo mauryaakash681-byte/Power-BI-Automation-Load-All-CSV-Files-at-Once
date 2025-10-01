@@ -58,6 +58,7 @@ with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
             
             sheet_name = os.path.splitext(filename)[0][:31]  
    try:
+   
                 df = pd.read_csv(file_path)
                 
                 df.to_excel(writer, sheet_name=sheet_name, index=False)
@@ -67,6 +68,7 @@ with pd.ExcelWriter(output_file, engine='xlsxwriter') as writer:
             except Exception as e:
             
                 print(f"❌ Error processing {filename}: {e}")
+                
 
 print("\n All CSVs have been combined into one Excel file!")
 
